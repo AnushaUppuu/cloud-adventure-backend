@@ -10,6 +10,7 @@ import userRouter from "./controllers";
 import { connection } from "./connection";
 import { sequelize } from "./sequilezeObject";
 async function main() {
+  console.log(process.env.USERNAME)
   await connection();
      await sequelize.sync({ alter: true });
   app.use(userRouter);
