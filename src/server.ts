@@ -10,9 +10,8 @@ import userRouter from "./controllers";
 import { connection } from "./connection";
 import { sequelize } from "./sequilezeObject";
 async function main() {
-  console.log(process.env.USERNAME)
   await connection();
-     await sequelize.sync({ alter: true });
+  await sequelize.sync({ alter: true });
   app.use(userRouter);
   app.listen(4000, () => {
     console.log("Server is running on the port 4000");
